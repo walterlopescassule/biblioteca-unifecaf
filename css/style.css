@@ -1,0 +1,268 @@
+:root {
+    --cor-primaria: #0B1E36;    /* Azul Escuro Institucional UniFECAF */
+    --cor-secundaria: #FF6B00;  /* Laranja Destaque UniFECAF */
+    --cor-fundo-claro: #F8FAFC;
+    --cor-texto: #1E293B;
+    --cor-branco: #FFFFFF;
+    --fonte-titulo: 'Montserrat', sans-serif;
+    --fonte-corpo: 'Open Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto);
+    background-color: var(--cor-fundo-claro);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/*CABEÇALHO*/
+.header {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.header-container {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.logo span {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--cor-secundaria);
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav a {
+    color: var(--cor-branco);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav a:hover, 
+.nav a:focus {
+    color: var(--cor-secundaria);
+}
+
+/*BANNER*/
+.hero {
+    background: linear-gradient(rgba(11, 30, 54, 0.85), rgba(11, 30, 54, 0.85)), url('../assets/imagens/banner-biblioteca.jpg') center/cover no-repeat;
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-family: var(--fonte-titulo);
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-branco);
+    padding: 12px 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #e05d00;
+}
+/* --- SOBRE A BIBLIOTECA --- */
+.sobre h2, 
+.livros-section h2, 
+.unidades-section h2 {
+    font-family: var(--fonte-titulo);
+    font-size: 2rem;
+    color: var(--cor-primaria);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+/* --- NOSSOS LIVROS --- */
+.livros-section {
+    background-color: var(--cor-branco);
+}
+
+.livros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.livro-card {
+    background-color: var(--cor-fundo-claro);
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.livro-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.livro-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.livro-card h3 {
+    font-size: 1.1rem;
+    font-family: var(--fonte-titulo);
+    color: var(--cor-primaria);
+}
+
+.livro-card .autor {
+    font-size: 0.9rem;
+    color: #64748B;
+    margin-bottom: 10px;
+}
+
+.livro-card .categoria {
+    display: inline-block;
+    background-color: #E2E8F0;
+    color: var(--cor-primaria);
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.btn-card {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.btn-card:hover {
+    background-color: var(--cor-secundaria);
+}
+/*AS UNIDADES*/
+.unidades-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.unidade-card {
+    background-color: var(--cor-branco);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.unidade-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/*RODAPÉ*/
+.footer {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 0.9rem;
+}
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .sobre-grid, 
+    .unidades-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
